@@ -1,10 +1,77 @@
 import React, { useEffect, useState } from 'react'
-import { Splide, SplideSlide } from '@splidejs/react-splide';
-import '@splidejs/react-splide/css';
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+
 import { Link } from 'react-router-dom';
 function Popular() {
     const key = import.meta.env.VITE_API_KEY;
     const [popular,setPopular] = useState([])
+
+    
+  function SampleNextArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{ ...style, display: "block", background: "black" }}
+        onClick={onClick}
+      />
+    );
+  }
+  
+  function SamplePrevArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{ ...style, display: "block", background: "black", }}
+        onClick={onClick}
+      />
+    );
+  }
+
+  var settings = {
+    autoplay: true,
+    pauseOnHover: true,
+    autoplaySpeed: 5000,
+    cssEase: "linear",
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    initialSlide: 0,
+    
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+          
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  };
     
     useEffect(()=>{
         console.log('rendered')
@@ -33,16 +100,12 @@ function Popular() {
   
     <div className='m-4'>
       <h3>Popular Picks</h3>
-      <Splide options={{
-        perPage:4,
-        gap:10,
-        arrowPath:false,
-        rewind:true,
-      }}>
+      <Slider {...settings}>
       { 
         popular.map((recipe)=>{
           return(
-            <SplideSlide key={recipe.id}>
+            <div key={recipe.id}>
+              
             <Link to={`/recipe/${recipe.id}`}>
               <div className='m-4 rounded-3xl overflow-hidden relative min-h-[15rem]'>
                 <p className='px-2 mb-6 text-sm absolute z-10 text-center bottom-0 w-full text-white'> {recipe.title} </p>
@@ -52,11 +115,11 @@ function Popular() {
               </div>
             </Link>
               
-            </SplideSlide>
+            </div>
           )
         })
       }
-      </Splide>
+      </Slider>
     </div>
   )
 }

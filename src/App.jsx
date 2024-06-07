@@ -4,7 +4,11 @@ import Category from './components/Category'
 import Search from './components/Search'
 import { Link } from 'react-router-dom'
 import { GiFoodTruck } from "react-icons/gi";
+
+
 function App() {
+
+  
 
   return (
     <>
@@ -18,7 +22,11 @@ function App() {
       <Search />
       <Category />
       <Pages />
-    </>
+   
+    
+
+</>
+
   )
 }
 
