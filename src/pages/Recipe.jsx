@@ -22,7 +22,7 @@ function Recipe() {
   return (
     <div className="recipe flex flex-col items-center mt-10 mb-5"> {/* Base styles */}
       <div className="recipe-header mb-10"> {/* Header section */}
-        <h2 className="text-2xl font-semibold mb-5">{recipeDetails.title}</h2>
+        <h2 className="text-2xl font-semibold mb-5 px-5">{recipeDetails.title}</h2>
         <img
           className="recipe-image rounded-lg max-w-sm md:max-w-full" // Responsive image
           src={recipeDetails.image}
@@ -48,14 +48,14 @@ function Recipe() {
         </button>
       </div>
       {activeTab === 'instructions' && (
-        <div className="recipe-content p-5"> {/* Content section */}
+        <div className="recipe-content"> {/* Content section */}
           <h6 className="mt-3" dangerouslySetInnerHTML={{ __html: recipeDetails.summary }}></h6>
           <h6 className="mt-3" dangerouslySetInnerHTML={{ __html: recipeDetails.instructions }}></h6>
         </div>
       )}
       {activeTab === 'ingredients' && (
-        <div className="recipe-ingredients p-5"> {/* Ingredients section */}
-          <ul className="ingredients-list ml-10">
+        <div className="recipe-ingredients "> {/* Ingredients section */}
+          <ul className="ingredients-list ">
             {recipeDetails.extendedIngredients.map((ingredient) => (
               <li className="ingredient list-disc" key={ingredient.id}>
                 {ingredient.original}
