@@ -15,11 +15,11 @@ The Recipe App is a dynamic and interactive web application designed to provide 
 - Interactive Animations: Smooth and engaging animations powered by Framer Motion.
 
 ## Technologies Used
-> React: JavaScript library for building the user interface.
-> Vite: Next generation frontend tooling for fast and optimized builds.
-> Framer Motion: Library for creating animations and gestures.
-> Tailwind CSS: Utility-first CSS framework for styling.
-> Spoonacular API: API for accessing a wide range of recipes and related data.
+- React: JavaScript library for building the user interface.
+- Vite: Next generation frontend tooling for fast and optimized builds.
+- Framer Motion: Library for creating animations and gestures.
+- Tailwind CSS: Utility-first CSS framework for styling.
+- Spoonacular API: API for accessing a wide range of recipes and related data.
 
 ## Getting Started
 Prerequisites
