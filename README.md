@@ -9,10 +9,10 @@ The Recipe App is a dynamic and interactive web application designed to provide 
 ![Project Screenshot](Screenshot.png)
 
 ## Features
-> Recipe Discovery: Search and explore a vast collection of recipes.
-> Save Recipes: Save favorite recipes for easy access later.
-> Responsive Design: Ensures a seamless experience on all devices.
-> Interactive Animations: Smooth and engaging animations powered by Framer Motion.
+- Recipe Discovery: Search and explore a vast collection of recipes.
+- Save Recipes: Save favorite recipes for easy access later.
+- Responsive Design: Ensures a seamless experience on all devices.
+- Interactive Animations: Smooth and engaging animations powered by Framer Motion.
 
 ## Technologies Used
 > React: JavaScript library for building the user interface.
